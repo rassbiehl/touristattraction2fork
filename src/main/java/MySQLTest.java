@@ -5,8 +5,7 @@ public class MySQLTest {
     public static void main(String[] args) {
         String url = "jdbc:mysql://touristguidefinal.mysql.database.azure.com:3306/tourist_attractions?useSSL=true&requireSSL=true";
         String user = "rasbiehl";
-        String password = "Lauraercute@123"; // Ensure this is correct
-
+       
         try {
             // Load the MySQL JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
