@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttractionList</title>
+
+    <!-- stylesheets -->
+    <link th:href="@{/main.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <!-- font-styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- start page -->
+<div class="start" id="start">
+    <!-- navigation-bar that is fixed to the screen -->
+    <div>
+        <nav class="navbar">
+            <div class="logo">Discover Denmark</div>
+            <ul class="nav-links">
+                <li><a href="#start">Home</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<!-- attractions page -->
+<div class="attractions" id="attractions">
+    <div class="content">
+        <h1 class="headline">Attractions to visit:</h1>
+        <div class="searchAddEdit">
+            <!-- search function -->
+            <form action="">
+                <input type="text" class="input-field" name="search" placeholder="Search for an attraction"
+                       th:value="${param.name}">
+                <button class="btn-submit" type="submit">Search</button> <!-- submits what the user typed in -->
+            </form>
+
+            <!-- add new attraction -->
+            <form action="attractions/add" method="get">
+                <button class="btn-submit" type="submit">Add attraction</button>
+            </form>
+        </div>
+
+        <!-- displays the attractions based on the url -->
+        <div class="seeAttractions">
+            <div class="attraction-item" th:each="attraction : ${attractions}">
+                <a class="link" th:text="${attraction.name}"></a>
+                <div class="inline-buttons">
+                    <form th:action="@{/attractions/{name}/tags(name=${attraction.name})}" method="get">
+                        <button class="btn-submit-tags" type="submit">Tags</button>
+                    </form>
+                    <form th:action="@{/attractions/{name}/edit(name=${attraction.name})}" method="get">
+                        <button class="btn-submit-update" type="submit">Update</button>
+                    </form>
+
+                    <form th:action="@{/attractions/delete/{name}(name=${attraction.name})}" method="post">
+                        <button class="btn-submit-delete" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="about" id="about">
+    <div class="about-content">
+        <h1 class="headline">About Discover Denmark</h1>
+
+        <p>Discover Denmark is a simple guide to cool places in Denmark.
+            It’s a test project for our studies at KEA, and we are trying things out. Hope you like it.</p>
+    </div>
+</div>
+
+<div class="contact" id="contact">
+    <div>
+        <h1 class="headline">Github names:</h1>
+    </div>
+    <p>rassbiehl</p>
+    <p>nial0003</p>
+    <p>Patrick</p>
+    <p>Christian</p>
+</div>
+
+</body>
+</html>

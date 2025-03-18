@@ -1,0 +1,469 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
+    height: 100%;
+    scrollbar-width: none;
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+}
+
+html {
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* front page------------------------------------------------------------------------- */
+.start {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://images.bonnier.cloud/files/ill/production/2022/09/12110153/koebenhavn-er-danmarks-stoerste-by.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
+
+.start-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.5vw;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+
+/* navigation bar------------------------------------------------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    background-color: hsla(0, 0%, 0%, 0.3);
+    color: floralwhite;
+    width: 100%;
+    position: fixed;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4vw;
+    font-family: "Darumadrop One", sans-serif;
+    font-size: 3vw;
+    align-items: center;
+}
+
+.navbar a:hover {
+    color: #6B686E;
+}
+
+.logo {
+    font-size: 4.5vw;
+    font-family: "Darumadrop One", sans-serif;
+    line-height: 1;
+    margin-bottom: 1.5vw;
+    padding-left: 35px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    padding-right: 35px;
+    margin: 0;
+    margin-bottom: 1vw;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: floralwhite;
+}
+
+/* attractions page ------------------------------------------------------------------------- */
+.attractions {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.prismic.io/bounce/c6c3ba65-b299-4ce1-8a25-6073547c1340_stephan-mahlke-XTPSr7skkWk-unsplash.jpg?auto=format,compress");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.link {
+    text-decoration: none;
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.searchAddEdit {
+    margin-bottom: 0.5vw;
+    display: flex;
+    gap: 1vw 1vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.seeAttractions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 5vw;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 62vw;
+    color: floralwhite;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Attraction Item Styling */
+.attraction-item {
+    font-family: "Darumadrop One", sans-serif;
+    font-style: oblique;
+    font-size: 2vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.inline-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    white-space: nowrap;
+    gap: 0.5vw;
+}
+
+/* Button Styling */
+.inline-buttons button {
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+    border: none;
+    border-radius: 6px;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .inline-buttons {
+        overflow-x: auto;
+    }
+
+    .inline-buttons button {
+        font-size: 0.7rem;
+        min-width: 70px;
+        padding: 5px 8px;
+    }
+}
+
+.btn-submit-delete {
+    background-color: #9B1C27;
+}
+
+.btn-submit-update {
+    background-color: #1E6B33;
+}
+
+.btn-submit-tags {
+    background-color: #065A9F;
+}
+
+/* about page ------------------------------------------------------------------------- */
+.about {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://www.airflix.dk/wp-content/uploads/2017/02/M%C3%B8ns-Klint-drone_1920x1080.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content {
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}
+
+
+/* add attraction page*/
+.custom-form {
+    width: 25vw;
+    margin: 0 auto;
+}
+
+.custom-form label {
+    display: block;
+
+}
+
+.custom-form input[type="text"],
+.custom-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.custom-form textarea {
+    height: 100px;
+}
+
+.custom-form button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.custom-form button:hover {
+    background-color: #45a049;
+}
+
+.custom-form .checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1vw;
+    text-align: center;
+    margin-top: 2vw;
+}
+
+.custom-form #tagsLabel {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.custom-form .checkbox-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+}
+
+.custom-form .checkbox-item input {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* contact page ------------------------------------------------------------------------- */
+.contact {
+    background-color: #796457;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.contact h1 {
+    margin-bottom: 10px; /* Adds spacing between the title and paragraphs */
+    font-size: 2vw;
+}
+
+.contact p {
+    font-size: 1vw;
+    max-width: 80%;
+    padding-left: 0; /* Remove left padding */
+}
+
+/* tags page ------------------------------------------------------------------------- */
+.content2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url("https://i.ibb.co/S7ynj9hb/687083-1920x1080-desktop-full-hd-amalienborg-background-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+.content2 h1 {
+    margin-bottom: 5vw;
+}
+
+.content2 .back {
+    margin-top: 18vw;
+}
+
+.back a {
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+    font-size: 1vw;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border: 2px solid #007bff;
+    background-color: #f0f8ff;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* update attraction site */
+
+.title {
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    flex-shrink: 0;
+}
+
+.description {
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    overflow: auto;
+
+}
+
+textarea {
+    width: 90%;
+    height: 80px;
+    resize: none;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 5px;
+    text-align: center;
+}
+
+.checkbox-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem; /* Smaller font for labels */
+    color: white;
+}
+
+.checkbox-item input {
+    width: 16px;
+    height: 16px;
+}
+
+/* general styling  ------------------------------------------------------------------------- */
+h1 {
+    font-size: 3vw;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2vw;
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5vw;
+}
+
+/* buttons */
+.btn-submit {
+
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+    font-size: 1vw;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+
+.btn-submit:hover {
+    background: rgba(0, 0, 0, 0.4); /* Darker transparent black */
+}
+
+.btn-submit:active {
+    background: rgba(0, 0, 0, 0.6); /* Even darker on click */
+}
+
+/* input text */
+.input-field {
+
+    font-family: "Darumadrop One", sans-serif;
+    color: floralwhite;
+    font-size: 1vw;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Light floralwhite color for placeholder */
+    text-align: center;
+}

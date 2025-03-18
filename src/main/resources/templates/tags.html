@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tags</title>
+
+    <!-- stylesheets -->
+    <link th:href="@{/main.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
+    <!-- font-styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="viewAttractionStart">
+    <div class="content2">
+        <h1 th:text="${viewAttraction.name}"></h1>
+        <p th:text="${viewAttraction.description}"></p>
+
+
+        <div class="tags" th:each="tag : ${viewAttraction.getTags}">
+            <span class="tag" th:text="${tag.getTagName}"></span>
+        </div>
+
+
+        <div class="back">
+            <a href="/attractions#attractions">Back to Attractions</a>
+        </div>
+    </div>
+</div>
+<!-- delete attraction function -->
+
+
+</body>
+</html>
