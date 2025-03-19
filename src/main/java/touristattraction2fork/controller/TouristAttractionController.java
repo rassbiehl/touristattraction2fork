@@ -42,11 +42,14 @@ public class TouristAttractionController {
 
     @GetMapping("/{name}/tags")
     public String getTags(@PathVariable String name, Model model) {
-
         TouristAttraction touristAttraction = touristAttractionService.findAttractionByName(name);
 
+        if (touristAttraction == null) {
+            return "redirect:/attractions"; // Redirect to main attractions page
+        }
+
         model.addAttribute("viewAttraction", touristAttraction);
-        return "tags";
+        return "tagsPage";
     }
 
     @GetMapping("/{name}/edit")
